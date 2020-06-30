@@ -1,0 +1,6 @@
+#!/usr/bin/php
+<?php
+var_dump("test");
+var_dump($argv);
+?>
+
