@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('line/create', 'Admin\LineController@add')->middleware('auth');
+    Route::post('line/create', 'Admin\LineController@create')->middleware('auth');
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
