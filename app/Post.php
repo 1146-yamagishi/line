@@ -11,7 +11,7 @@ class Post extends Model
     
     public static $rules = array(
         'title' => 'required',
-        'image' => 'required',
+        'image_path' => 'required',
         'user_id'=>'required',
     );
     

@@ -17,7 +17,7 @@ class CreatePostsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id')->index();
             $table->string('title');
-            $table->string('image');
+            $table->string('image_path');
             $table->string('comment');
             $table->timestamps();
         });
@@ -26,6 +26,7 @@ class CreatePostsTable extends Migration
     /**
      * Reverse the migrations.
      *
+     
      * @return void
      */
     public function down()

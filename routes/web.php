@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin'], function() {
     Route::get('line/create', 'Admin\LineController@add')->middleware('auth');
     Route::post('line/create', 'Admin\LineController@create')->middleware('auth');
+    Route::get('line/index', 'Admin\LineController@index')->middleware('auth');
 });
 Auth::routes();
 
