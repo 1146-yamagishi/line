@@ -29,8 +29,9 @@
     <body>
         <div id=app>
             <nav class="navbar navbar-expand-md  navbar-laravel">
-                <div class="container">
-                    <a href="{{ url('/') }}">home</a>
+                <div>
+                    <a href="{{ url('admin/line/index') }}">・home</a>
+                    <a href="{{ url('admin/line/ranking') }}">・ランキング</a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->

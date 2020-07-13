@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Post;
 use Illuminate\Support\Facades\Auth;
+use App\Evaluation;
 
 class LineController extends Controller
 {
@@ -40,12 +41,25 @@ class LineController extends Controller
     
     public function index(Request $request)
     {
-        $informations=Post::all()->sortByDesc('updated_at');
-        
         $cond_title=$request->cond_title;
         if($cond_title!=''){
-            $informations=Post::where('title',$cond_title)->get();
+            $informations=Post::where('title',$cond_title)->get()->sortByDesc('updated_at');
+        }else{
+            $informations=Post::all()->sortByDesc('updated_at');
         }
-        return view('admin.line.index',['informations'=>$informations,'cond_title'=>$cond_title]);
+        // Post::withCount('evaluations')
+        // ->orderBy('evaluations_count', 'desc')
+        // ->limit(3)
+        // ->get();
+    
+    return view('admin.line.index',['informations'=>$informations,'cond_title'=>$cond_title]);
+    }
+    public function ranking(Request $request)
+    {
+    $informations=Post::withCount('evaluations')
+    ->orderBy('evaluations_count', 'desc')
+    ->limit(10)
+    ->get();
+    return view('admin.line.ranking',['informations'=>$informations,]);
     }
 }
