@@ -1,10 +1,32 @@
 body{
-    background-color:#90EE90;
+    min-height: 100vh;
+    //display: flex;
+    flex-direction: column;
 }
 .navbar{
-    background-color:white;
-    margin:0;
+    height: 40px;
+    //text-align: center;
+    background-color:#808080 ;
+    color: #fff;
 }
+.nav-belt{
+    height: 60px;
+    background-color:#00FF7F ;
+    display: table;
+    width: 100%;
+}
+.nav-belt h3{
+    color:white;
+    //margin-left:30px;
+    display: table-cell;
+    vertical-align: middle;
+    margin-bottom:0;
+    padding-left:30px;
+    //text-align:center;
+}
+// #navbar-main{
+//     background-color: #000000;
+// }
 .ranking{
     color:red;
     font-size:20px;
@@ -12,4 +34,32 @@ body{
 .botan{
     padding:0;
     font-weight: 900; 
+}
+.bar{
+    margin:0;
+}
+.hed{
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+    background-color:#808080;
+    border-left:1px solid white;
+    color:white;
+    //margin-top:10px;
+    //text-align: center;
+    // font-size: 15px;
+    // letter-spacing: .1em;
+    // -webkit-transition: opacity .2s;
+    // -moz-transition: opacity .2s;
+    // -ms-transition: opacity .2s;
+    // transition: opacity .2s;
+    // height: 49px;
+    // line-height: 25px;
+    // position: relative;
+}
+#rink{
+    color:white;
+}
+#navbarDropdown{
+    color:white;
 }

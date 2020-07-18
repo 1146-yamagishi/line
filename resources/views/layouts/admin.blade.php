@@ -28,10 +28,19 @@
     </head>
     <body>
         <div id=app>
-            <nav class="navbar navbar-expand-md  navbar-laravel">
+            <header class="nav-belt">
+                <h3>LINE投稿掲示板(￣▽￣)</h3>    
+            </header>
+            <navbar class="navbar navbar-expand-md  navbar-laravel">
                 <div>
-                    <a href="{{ url('admin/line/index') }}">・home</a>
-                    <a href="{{ url('admin/line/ranking') }}">・ランキング</a>
+                    <ul class="bar">
+                        <li class="hed">
+                            <a id="rink" href="{{ url('admin/line/index') }}">home</a>
+                        </li>
+                        <li class="hed">
+                            <a id="rink" href="{{ url('admin/line/ranking') }}">ランキング</a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
@@ -58,7 +67,7 @@
                         {{-- 以上までを追記 --}}
                     </ul>
                 </div>
-            </nav>
+            </navbar>
         </div>
         @yield('content')
     </body>
