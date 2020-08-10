@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Post;
 use Illuminate\Support\Facades\Auth;
 use App\Evaluation;
+use Storage;
 
 class LineController extends Controller
 {
@@ -24,8 +25,8 @@ class LineController extends Controller
         $form = $request->all();
         
     if (isset($form['image'])) {
-        $path = $request->file('image')->store('public/image');
-        $post->image_path = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+        $post->image_path = Storage::disk('s3')->url($path);
     } else {
         $post->image_path = null;
     }
