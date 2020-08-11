@@ -19,6 +19,7 @@ class LineController extends Controller
     public function create(Request $request){
         $request->validate([
         'title' => 'required',
+        'comment'=>'required',
         'image' => 'required',]);
         
         $post=new Post;
@@ -34,7 +35,9 @@ class LineController extends Controller
     unset($form['image']);
     
     $post->user_id = Auth::id();
+    //dd($form);
     $post->fill($form);
+    //dd($post);
     $post->save();
     
     return redirect('admin/line/index');

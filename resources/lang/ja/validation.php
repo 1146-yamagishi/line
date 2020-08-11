@@ -147,7 +147,8 @@ return [
 
     'attributes' => [
         'title'=>'タイトル',
-        'image'=>'画像'
+        'image'=>'画像',
+        'comment'=>'コメント'
         ],
 
 ];
