@@ -16,6 +16,10 @@ body {
   width: 100%;
 }
 
+.nav-link {
+  color: #fff;
+}
+
 .nav-belt h3 {
   color: white;
   display: table-cell;
